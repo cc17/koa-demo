@@ -4,7 +4,6 @@ var serve = require('koa-static');
 var parse = require('co-busboy');
 var fs = require('fs');
 var path = require('path');
-
 var userAgent = require('koa-useragent');
 var requireDir = require('require-dir');
 //var mongoose = require('koa-mongoose');
@@ -16,6 +15,7 @@ const mongoose = require("mongoose");
 mongoose.connect(configs.mongo.host + configs.mongo.database);
 mongoose.connection.on("error", function(err) {
   console.log(err);
+  console.log('111');
 });
 
 app.use(serve(__dirname + '/public'));
