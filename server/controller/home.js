@@ -11,7 +11,7 @@ exports.index2 = function *(){
 exports.index = function *(){
   
   this.body = yield render('basic',{
-    content: [{title:1111}]
+    content: [{title:1111},{title:222}]
   });
 }
 
