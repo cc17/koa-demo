@@ -11,12 +11,12 @@ var configs = require('./server/configs/configs');
 
 
 //链接数据库
-const mongoose = require("mongoose");
-mongoose.connect(configs.mongo.host + configs.mongo.database);
-mongoose.connection.on("error", function(err) {
-  console.log(err);
-  console.log('111');
-});
+// const mongoose = require("mongoose");
+// mongoose.connect(configs.mongo.host + configs.mongo.database);
+// mongoose.connection.on("error", function(err) {
+//   console.log(err);
+//   console.log('111');
+// });
 
 app.use(serve(__dirname + '/public'));
 
@@ -45,4 +45,6 @@ app.use(function *(next){
 
 
 
-if (!module.parent) app.listen(3000);
+if (!module.parent) app.listen(3000,function(){
+  console.log('server is running at 3000' )
+});
